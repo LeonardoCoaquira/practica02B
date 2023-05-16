@@ -13,7 +13,7 @@ def index(request):
 
 def semestre(request, semestre_id):
     semestre = Semestre.objects.get(pk=semestre_id)
-    lista_cursos = Curso.semestre_set.all()
+    lista_cursos = semestre.curso_set.all()
     lista_semestres = Semestre.objects.all()
 
     context = {
